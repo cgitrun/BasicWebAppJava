@@ -41,6 +41,14 @@ public class QueryProcessor {
             return response;
         }
 
+        if (query.contains("minus")) {
+            String[] splitString = query.split(" ");
+            String firstNum = splitString[2];
+            String secondNum = splitString[4];
+
+            int result = Integer.parseInt(firstNum) - Integer.parseInt(secondNum);
+            return Integer.toString(result);
+        }
 
         return "";
     }
