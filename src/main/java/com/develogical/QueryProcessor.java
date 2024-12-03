@@ -26,6 +26,22 @@ public class QueryProcessor {
             return "RobTest";
         }
 
+        if (query.contains("prime")) {
+            String[] splitString = query.split(":");
+            String numFullString = splitString[1];
+            String[] numsStringArr = numFullString.split(", ");
+
+            String response = "";
+            for (String num : numsStringArr) {
+                String strippedNum = num.replaceAll("\\s+","");
+                if (isPrime(Integer.parseInt(strippedNum))) {
+                    response += num + " ";
+                }
+            }
+            return response;
+        }
+
+
         return "";
     }
 
