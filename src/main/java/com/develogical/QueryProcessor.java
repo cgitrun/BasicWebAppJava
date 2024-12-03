@@ -50,6 +50,17 @@ public class QueryProcessor {
             return Integer.toString(result);
         }
 
+        if (query.contains("plus")) {
+            query = query.replaceAll("What is ","");
+            query = query.replaceAll("plus ","");
+            String[] numsStringArr = query.split(" ");
+            int sum = 0;
+            for (String num : numsStringArr) {
+                sum += Integer.parseInt(num);
+            }
+            return Integer.toString(sum);
+        }
+
         return "";
     }
 
