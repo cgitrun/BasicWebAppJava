@@ -61,6 +61,15 @@ public class QueryProcessor {
             return Integer.toString(sum);
         }
 
+        if (query.contains("power")) {
+            String[] splitString = query.split(" ");
+            String base = splitString[0];
+            String exponent = splitString[1];
+
+            double result = Math.pow(Double.parseDouble(base), Double.parseDouble(exponent));
+            return Double.toString(result);
+        }
+
         return "";
     }
 
